@@ -44,6 +44,8 @@ public class Controller {
         System.out.println(Whois.whoisIp("whois " + ip)+ "\n");
         //Ping.pingIp("ping -c1 " + ip);
         System.out.println(Ping.pingIp("ping -c1 " + ip) + "\n");
+        Nmap.nmapIp("nmap -sT " + ip);
+
 
 
 
