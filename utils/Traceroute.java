@@ -6,7 +6,8 @@ import java.io.InputStreamReader;
 public class Traceroute {
     public static String traceIp(String command) {
         String tracerouteResult="";
-
+        long start = System.currentTimeMillis();
+        long end = start + 100;
 
         try {
             Process p = Runtime.getRuntime().exec(command);
@@ -15,7 +16,8 @@ public class Traceroute {
 
             String s = "";
             // reading output stream of the command
-            while ((s = inputStream.readLine()) != null) {
+            while ((System.currentTimeMillis() < end)) {
+                s = inputStream.readLine();
                 System.out.println(s);
                 tracerouteResult += s;
 
